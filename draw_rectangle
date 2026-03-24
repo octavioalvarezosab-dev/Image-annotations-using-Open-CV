@@ -1,0 +1,19 @@
+import cv2
+import sys
+
+image_path = r'C:\Users\Estefano\Desktop\Iro_colombia_final_final.jpeg'
+image = cv2.imread(image_path)
+
+if image is None:
+    print("Error: No se encontró la imagen.")
+    sys.exit()
+
+# RECTÁNGULO 1: Borde verde
+cv2.rectangle(image, (150, 150), (450, 550), (0, 255, 0), 4)
+
+# RECTÁNGULO 2: Azul y RELLENO
+cv2.rectangle(image, (600, 100), (850, 300), (255, 0, 0), -1)
+
+cv2.imshow("Demo: Drawing Rectangles", image)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
